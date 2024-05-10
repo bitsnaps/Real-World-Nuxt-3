@@ -9,10 +9,12 @@ const isHover = ref(false)
 <template>
   <div class="card" :class="{hover: isHover}">
     <h2 class="title">
-      {{ post.title }}
+      <NuxtLink :to="`/posts/${post.slug}`">
+{{ post.title }}
+</NuxtLink>
     </h2>
     <CategoryLink :category="post.category" />
-    <RenderMarkdown :source="post.intro" />
+    <!-- <RenderMarkdown :source="post.intro" /> -->
     <NuxtLink
       class="more"
       :to="`/posts/${post.slug}`"
@@ -38,6 +40,9 @@ const isHover = ref(false)
 
 .card .title {
   font-size: 20pt;
+}
+.card .title:hover {
+  color: colors.$green-light;
 }
 
 .card .more {

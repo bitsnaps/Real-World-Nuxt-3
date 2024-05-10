@@ -6,7 +6,8 @@ const { category } = defineProps<{ category: Category }>()
 
 <template>
   <div class="category">
-    <NuxtLink :to="`/categories/${category.slug}`">Category: {{ category.name }}</NuxtLink>
+    <NuxtLink :to="`/categories/${category.slug}`">
+Category: {{ category.name }}</NuxtLink>
   </div>
 </template>
 

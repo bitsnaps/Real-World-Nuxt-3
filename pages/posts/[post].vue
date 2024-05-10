@@ -29,7 +29,10 @@ if (post.value) {
         {{ post.title }}
         <CategoryLink :category="post.category" />
       </h1>
-      <RenderMarkdown :source="post.content" />
+      <!-- This cause an error at the moment -->
+      <!-- <RenderMarkdown :source="post.content" /> -->
+      <!-- eslint-disable-next-line vue/no-v-html-->
+      <p v-html="post.content" />
     </template>
   </main>
 </template>

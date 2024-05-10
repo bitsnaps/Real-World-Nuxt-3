@@ -21,7 +21,7 @@ const markdownOptions = {
 </script>
 
 <template>
-  <VueMarkdown :source="source" :options="markdownOptions" />
+  <!-- <VueMarkdown :source="source" :options="markdownOptions" /> -->
 </template>
 
 <style lang="scss">

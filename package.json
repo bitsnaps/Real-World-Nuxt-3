@@ -14,7 +14,7 @@
     "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@types/markdown-it": "^13.0.7",
-    "eslint": "^9.1.1",
+    "eslint": "^8.55.0",
     "highlight.js": "^11.9.0",
     "nuxt": "^3.11.2",
     "sass": "^1.69.5",
