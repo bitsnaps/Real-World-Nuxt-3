@@ -1,24 +1,22 @@
 <script setup lang="ts">
-import type { PostDetails } from '@/data/posts'
-import { getPostDetailsUrl } from '@/data/posts'
+import type { PostDetails } from "@/data/posts";
+import { getPostDetailsUrl } from "@/data/posts";
 
 definePageMeta({
-  layout: 'breadcrumb'
-})
+  layout: "breadcrumb",
+});
 
-const postSlug = useParam('post')
+const postSlug = useParam("post");
 
-const { data: post } = await useFetch<PostDetails>(
-  getPostDetailsUrl(postSlug)
-)
+const { data: post } = await useFetch<PostDetails>(getPostDetailsUrl(postSlug));
 
-const categoryState = useCategoryState()
+const categoryState = useCategoryState();
 
 if (post.value) {
   categoryState.value = {
     name: post.value.category.name,
-    slug: post.value.category.slug
-  }
+    slug: post.value.category.slug,
+  };
 }
 </script>
 
@@ -29,10 +27,7 @@ if (post.value) {
         {{ post.title }}
         <CategoryLink :category="post.category" />
       </h1>
-      <!-- This cause an error at the moment -->
-      <!-- <RenderMarkdown :source="post.content" /> -->
-      <!-- eslint-disable-next-line vue/no-v-html-->
-      <p v-html="post.content" />
+      <RenderMarkdown :source="post.content" />
     </template>
   </main>
 </template>

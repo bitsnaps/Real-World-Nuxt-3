@@ -1,20 +1,21 @@
 <script setup lang="ts">
-import type { Post } from '@/data/posts'
+import type { Post } from "@/data/posts";
 
-const { post } = defineProps<{ post: Post }>()
+const { post } = defineProps<{ post: Post }>();
 
-const isHover = ref(false)
+const isHover = ref(false);
 </script>
 
 <template>
-  <div class="card" :class="{hover: isHover}">
+  <div class="card" :class="{ hover: isHover }">
     <h2 class="title">
       <NuxtLink :to="`/posts/${post.slug}`">
-{{ post.title }}
-</NuxtLink>
+        {{ post.title }}
+      </NuxtLink>
     </h2>
     <CategoryLink :category="post.category" />
-    <!-- <RenderMarkdown :source="post.intro" /> -->
+
+    <RenderMarkdown :source="post.intro" />
     <NuxtLink
       class="more"
       :to="`/posts/${post.slug}`"
